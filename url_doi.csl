@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="en-US">
+  <info>
+    <title>DOI only (full URL inline)</title>
+    <id>http://www.zotero.org/styles/digital-object-identifier-only-url-inline</id>
+    <link href="http://www.zotero.org/styles/digital-object-identifier-only-url-inline" rel="self"/>
+    <author>
+      <name>Custom</name>
+      <email>noreply@example.com</email>
+    </author>
+  </info>
+  <macro name="doi-url">
+    <text variable="DOI" prefix="https://doi.org/"/>
+  </macro>
+  <citation>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <text macro="doi-url"/>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <choose>
+        <if variable="DOI">
+          <text macro="doi-url"/>
+        </if>
+        <else>
+          <text term="online"/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+</style>
