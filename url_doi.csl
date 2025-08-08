@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" default-locale="en-US">
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never" default-locale="en-US">
   <info>
-    <title>DOI only (full URL)</title>
-    <id>http://www.zotero.org/styles/digital-object-identifier-only-full-url</id>
-    <link href="http://www.zotero.org/styles/digital-object-identifier-only-full-url" rel="self"/>
+    <title>DOI only</title>
+    <id>http://www.zotero.org/styles/digital-object-identifier-only</id>
+    <link href="http://www.zotero.org/styles/digital-object-identifier-only" rel="self"/>
+    <link href="https://forums.zotero.org/discussion/23511" rel="documentation"/>
     <author>
-      <name>Raphael Grolimund (modified)</name>
+      <name>Raphael Grolimund</name>
+      <email>raphael.grolimund@epfl.ch</email>
     </author>
-    <category citation-format="author-date"/>
-    <summary>Outputs only the DOI in full URL form for in-text citations.</summary>
-    <updated>2025-08-08T00:00:00+00:00</updated>
+    <category field="generic-base"/>
+    <summary>Style for creating Digital Object Identifier (DOI) lists.</summary>
+    <updated>2014-06-18T00:00:00+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
-
   <locale>
     <terms>
       <term name="online">&#160;</term>
     </terms>
   </locale>
-
-  <macro name="doi-url">
+  <macro name="doi">
     <text variable="DOI" prefix="https://doi.org/"/>
   </macro>
-
-  <citation>
+  <citation disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" collapse="year" year-suffix-delimiter=", " after-collapse-delimiter="; ">
     <layout prefix="(" suffix=")" delimiter="; ">
-      <text macro="doi-url"/>
+      <text macro="doi"/>
     </layout>
   </citation>
-
   <bibliography>
     <layout>
       <choose>
         <if variable="DOI">
-          <text macro="doi-url"/>
+          <text macro="doi"/>
         </if>
         <else>
           <text term="online"/>
